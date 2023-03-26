@@ -1,6 +1,6 @@
 package org.example;
 
-public class Tools {
+public class Tools extends Things {
 
     //chileds:
     //1-achar

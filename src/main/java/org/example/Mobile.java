@@ -1,4 +1,4 @@
 package org.example;
 
-public class Mobile {
+public class Mobile extends Digital {
 }

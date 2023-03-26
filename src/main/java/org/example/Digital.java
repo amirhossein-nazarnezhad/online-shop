@@ -1,6 +1,6 @@
 package org.example;
 
-public class Digital {
+public class Digital extends Things{
 
     //childes:
     //1- mobile

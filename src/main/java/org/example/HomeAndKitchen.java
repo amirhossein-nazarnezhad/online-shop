@@ -1,6 +1,6 @@
 package org.example;
 
-public class HomeAndKitchen {
+public class HomeAndKitchen extends Things {
 
     //childes:
     //1-yakhal
