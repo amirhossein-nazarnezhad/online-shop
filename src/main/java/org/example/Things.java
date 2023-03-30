@@ -8,8 +8,7 @@ public class Things {
     private String Ideas; // -> arraylist
     private String color;
     private String weight;
-
-    //takhfif -> boolean
+    private boolean discount;
 
 
     //========================================================================

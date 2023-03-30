@@ -5,15 +5,17 @@ public class Seller {
 //==========================================================
     private String companyName;
     private String password;
+    private String forgottenCode;
 
     //=============================================================
 
     //constructor
 
-    public Seller(String companyName, String password)
+    public Seller(String companyName, String password , String forgottenCode)
     {
         this.companyName = companyName;
         this.password = password;
+        this.forgottenCode = forgottenCode;
     }
 
     //=====================================================================
@@ -35,6 +37,13 @@ public class Seller {
         this.password = password;
     }
 
+    public String getForgottenCode() {
+        return forgottenCode;
+    }
+
+    public void setForgottenCode(String forgottenCode) {
+        this.forgottenCode = forgottenCode;
+    }
     //============================================================================
 
 

@@ -12,7 +12,7 @@ public class User {
         private String emailAddress;
         private String phoneNumber;
         private String address;
-
+        private double wallet;
         //================================================================
 
         //constructor
@@ -67,6 +67,14 @@ public class User {
 
         public void setAddress(String address) {
                 this.address = address;
+        }
+
+        public double getWallet() {
+                return wallet;
+        }
+
+        public void setWallet(double wallet) {
+                this.wallet = wallet;
         }
 
         //==================================================================================

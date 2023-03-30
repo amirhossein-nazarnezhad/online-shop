@@ -26,6 +26,35 @@ public class Shop {
 
         //=======================================================================
 
+        //getter and setter
+
+
+        public String getName() {
+                return name;
+        }
+
+        public void setName(String name) {
+                this.name = name;
+        }
+
+        public String getWebAddress() {
+                return webAddress;
+        }
+
+        public void setWebAddress(String webAddress) {
+                this.webAddress = webAddress;
+        }
+
+        public String getPhoneNumber() {
+                return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+                this.phoneNumber = phoneNumber;
+        }
+
+        //==============================================================================
+
         public void createUserAccount(User user)
         {
                 users.add(user);
@@ -49,7 +78,7 @@ public class Shop {
         {
                 for (User i : users)
                 {
-                        if( i.getUsername().contains(username))
+                        if( i.getUsername().equals(username))
                         {
                                 return true;
                         }
@@ -80,7 +109,7 @@ public class Shop {
         {
                 for (Seller i : sellers)
                 {
-                        if( i.getCompanyName().contains(companyName))
+                        if( i.getCompanyName().equals(companyName))
                         {
                                 return true;
                         }
@@ -110,7 +139,7 @@ public class Shop {
         {
                 for (Admin i : admins)
                 {
-                        if( i.getUsername().contains(username))
+                        if( i.getUsername().equals(username))
                         {
                                 return true;
                         }
@@ -134,6 +163,114 @@ public class Shop {
         }
 
         //==================================================================================================
+
+        public boolean doesUserEmailAddressCorrect(String username , String emailAddress)
+        {
+                for (User i : users)
+                {
+                        if( i.getUsername().contains(username) && i.getEmailAddress().equals(emailAddress) )
+                        {
+                                return true;
+                        }
+
+                }
+                return false;
+        }
+
+        //==================================================================================================
+
+
+        public boolean doesAdminEmailAddressCorrect(String username , String emailAddress)
+        {
+                for (Admin i : admins)
+                {
+                        if( i.getUsername().contains(username) && i.getEmailAddress().equals(emailAddress) )
+                        {
+                                return true;
+                        }
+
+                }
+                return false;
+        }
+
+        //==================================================================================================
+
+
+        public String getAdminPassword(String username)
+        {
+                for (Admin i : admins)
+                {
+                        if( i.getUsername().equals(username) )
+                        {
+                                return i.getPassword();
+                        }
+
+                }
+                return null;
+        }
+
+
+//=========================================================================================================
+
+
+
+        public String getUserPassword(String username)
+        {
+                for (User i : users)
+                {
+                        if( i.getUsername().equals(username) )
+                        {
+                                return i.getPassword();
+                        }
+
+                }
+                return null;
+        }
+
+
+//=========================================================================================================
+
+        public boolean doesCompanyForgottenPasswordCorrect(String companyName , String forgottenPassword)
+        {
+                for (Seller i : sellers)
+                {
+                        if ( i.getCompanyName().contains(companyName) && i.getForgottenCode().equals(forgottenPassword))
+                        {
+                                return true;
+                        }
+
+                }
+                return false;
+        }
+
+        //==================================================================================================
+
+
+
+        public String getCompanyPassword(String companyName)
+        {
+                for (Seller i : sellers)
+                {
+                        if( i.getCompanyName().equals(companyName) )
+                        {
+                                return i.getPassword();
+                        }
+
+                }
+                return null;
+        }
+
+
+//=========================================================================================================
+
+
+
+
+
+
+
+
+
 
         public static void addRequest()
         {
