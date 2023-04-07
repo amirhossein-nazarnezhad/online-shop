@@ -48,7 +48,18 @@ public class Admin {
 
     //=================================================================================
 
+    //to string
 
-    //admin haye jadid faghat tavasot baghie admin ha entekhab mishavand
-    // aval kar bayad ye admin dashte bashim
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                '}';
+    }
+
+
+
 }

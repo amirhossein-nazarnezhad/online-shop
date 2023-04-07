@@ -1,8 +1,24 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class User {
 
         //create sefaresh class ***
+
+
+        //================================================================
+
+        //array lists
+
+
+        ArrayList <Order> orders = new ArrayList<>();
+
+
+
+
+
+
 
 
         //==============================================================
@@ -79,11 +95,24 @@ public class User {
 
         //==================================================================================
 
+        @Override
+        public String toString() {
+                return "User{" +
+                        "orders=" + orders +
+                        ", username='" + username + '\'' +
+                        ", password='" + password + '\'' +
+                        ", emailAddress='" + emailAddress + '\'' +
+                        ", phoneNumber='" + phoneNumber + '\'' +
+                        ", address='" + address + '\'' +
+                        ", wallet=" + wallet +
+                        '}';
+        }
+
 
         //1- sabad kharid
-        //2- list sefareshat
+        //2- list sefareshat  done
         //3- list of mahsoolat kharidari shode
-        //4- kif pool
-        //5- safhe namaye bara inke admin ha betoonan bebinan
+        //4- kif pool  done
+        //5- safhe namaye bara inke admin ha betoonan bebinan  done
 
     }
