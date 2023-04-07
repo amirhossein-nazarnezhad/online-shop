@@ -7,7 +7,7 @@ public class Main {
     //--- -> ***
 
     // list kar haye ezafi :
-
+//---------------------------------------------------
     //1- ID bezaram bara hame chiz
     //2- recommendation user va password
     //3- strong recommendation for Products
@@ -18,7 +18,12 @@ public class Main {
     //8- not robot
     //9- ye boolean takhfif bara har kala ke age true shod ye darsadi takhfif(az seller miporse) bokhore
     //10- dastresi haye mokhtalef be admin haye jadid  -> handle with boolean
+//------------------------------------------------------------------------------------------------------------
 
+
+
+
+    //choon darm object haei ke az class ham ro mirizam toye array list  baad khode object ha ham tooshoon array list hast moqe chap error mide
 
 
     static Shop shop = new Shop(); // -> Digikala
@@ -48,7 +53,7 @@ public class Main {
         Admin admin = new Admin(username , password ,emailAddress);
         shop.admins.add(admin);
 
-        
+
 
         System.out.println("       Digikala       ");
         System.out.println();
@@ -620,12 +625,13 @@ public class Main {
         System.out.println("please select one of the options below");
         System.out.println("1- view profile");
         System.out.println("2- update profile");
-        System.out.println("3- view Products");  // -> dakhel in be sabad kharid ezafe kone
-        System.out.println("4- search Products");  // -> dakhel in be sabad kharid ezafe kone
+        System.out.println("3- view Products  (this option is under development and will be added in the next updates of the program)");
+        System.out.println("4- search Products");
         System.out.println("5- increase the wallet");
-        System.out.println("6- log out");
+        System.out.println("6- buy product");
+        System.out.println("7- log out");
 
-        //view sabad kharid and can buy 976857668#%&#&%#%#%76875487664875
+
 
         int number = input.nextInt();
         //-----------------------------------------------------------------------------------------
@@ -844,7 +850,8 @@ public class Main {
 
         else if(number == 3)
         {
-            //todo
+            System.out.println("we once said that this option is under development, please be patient, it will be added in the not too distant future");
+            userMenu(username);
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -853,7 +860,7 @@ public class Main {
 
         else if(number == 4)
         {
-            //todo
+            searchProduct();
         }
 
         //-----------------------------------------------------------------------------------------------------
@@ -862,14 +869,56 @@ public class Main {
 
         else if(number == 5)
         {
+            System.out.println("please enter the amount you want to add to your wallet");
+            double money = input.nextDouble();
+
+            Request request = new Request(shop.whichUser(username) , money);
+            shop.addRequest(request);
+            System.out.println("please wait until accept by admin");
+
+//todo
             //todo
+
+
+            System.out.println("Do you want continue?");
+            System.out.println("1- yes");
+            System.out.println("2- no");
+
+            int n = input.nextInt();
+
+            if(n == 1)
+            {
+                userMenu(username);
+            }
+            else if(n == 2)
+            {
+                System.out.println("good bye :)");
+            }
+
+            else
+            {
+                System.out.println("you made a wrong entry and we will show the first page again by default");
+                userMenu(username);
+            }
+
+
         }
+
+        //------------------------------------------------------------------------------------------------------------
+
+        //buy product
+
+        else if(number == 6)
+        {
+            buyProduct();
+        }
+
 
         //------------------------------------------------------------------------------------------------------------
 
         //log out
 
-        else if( number == 6)
+        else if( number == 7)
         {
             logOut();
         }
@@ -885,6 +934,3364 @@ public class Main {
 
     }
 
+    //===================================================================================================
+
+    public static void buyProduct()
+    {
+
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("please enter the type of product you want too buy");
+        System.out.println("1- Beauty and health");
+        System.out.println("2- book and stationery");
+        System.out.println("3- car and motorcycle");
+        System.out.println("4- clothes");
+        System.out.println("5- digital");
+        System.out.println("6- home and kitchen");
+        System.out.println("7- sport");
+        System.out.println("8- tools");
+        System.out.println("9- toys");
+
+        int number = input.nextInt();
+
+        //*******************************************************************************************88
+
+        //buy beauty and health
+
+        if(number == 1)
+        {
+
+
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- cream");
+            System.out.println("2- mask");
+            System.out.println("3-shampoo");
+            System.out.println("4- tooth brush");
+            System.out.println("5- tooth paste");
+            System.out.println("6- perfume"); // odkolon
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //********************************************************************************************8
+
+        //buy book and stationery
+
+        else if(number == 2)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- pencil");
+            System.out.println("2- pen");
+            System.out.println("3- table");
+            System.out.println("4- pencil case");
+            System.out.println("5- notebook");
+            System.out.println("6- eraser");
+            System.out.println("7- ruler");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //********************************************************************************************88
+
+        //car and motorcycle
+
+        else if(number == 3)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- car");
+            System.out.println("2- motorcycle");
+            System.out.println("3- tire");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //************************************************************************************************8
+
+        //clothes
+
+        else if(number == 4)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- shirt");
+            System.out.println("2- pants");
+            System.out.println("3- hoodie");
+            System.out.println("4- shoe");
+            System.out.println("5- jacket");
+            System.out.println("6- belt");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //**************************************************************************************************8
+
+        //buy digital
+
+        else if(number == 5)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- mobile");
+            System.out.println("2- tv");
+            System.out.println("3- headphone");
+            System.out.println("4- memory");
+            System.out.println("5- camera");
+            System.out.println("6- computer");
+            System.out.println("7- playstation");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+        }
+
+        //****************************************************************************************************8
+
+        //buy home and kitchen
+
+        else if(number == 6)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- refrigerator");
+            System.out.println("2- carpet");
+            System.out.println("3- sofa");
+            System.out.println("4- washingMachine");
+            System.out.println("5- gas");
+            System.out.println("6- cooler");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+        }
+
+        //***************************************************************************************************
+
+        //buy sport
+
+        else if(number == 7)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- ball");
+            System.out.println("2- racket");
+            System.out.println("3- skate");
+            System.out.println("4- Whistle");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //**************************************************************************************************
+
+        //tools
+
+        else if(number == 8)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- wrench");
+            System.out.println("2- screwDriver");
+            System.out.println("3- screw");
+            System.out.println("4- nut");
+            System.out.println("5- saw");
+            System.out.println("6- nails");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+        }
+
+        //*************************************************************************************************8
+
+        //toys
+
+        else if(number == 9)
+        {
+            System.out.println("please specify which product you want to buy");
+            System.out.println("1- puzzle");
+            System.out.println("2- doll");
+            System.out.println("3- gun");
+            System.out.println("4- bike");
+            System.out.println("5- car");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+            }
+
+            else if(number1 == 2)
+            {
+
+            }
+
+            else if(number1 == 3)
+            {
+
+            }
+
+            else if(number1 == 4)
+            {
+
+            }
+
+            else if(number1 == 5)
+            {
+
+            }
+
+            else if(number1 == 6)
+            {
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                buyProduct();
+            }
+
+        }
+
+        //***************************************************************************************************
+
+        else
+        {
+            System.out.println("please enter valid input and try again");
+            buyProduct();
+        }
+
+
+
+
+    }
+
+    //===================================================================================================
+//
+//    public static void viewProduct()
+//    {
+//        Scanner input = new Scanner(System.in);
+//
+//        System.out.println("please enter the type of product you want too view");
+//        System.out.println("1- Beauty and health");
+//        System.out.println("2- book and stationery");
+//        System.out.println("3- car and motorcycle");
+//        System.out.println("4- clothes");
+//        System.out.println("5- digital");
+//        System.out.println("6- home and kitchen");
+//        System.out.println("7- sport");
+//        System.out.println("8- tools");
+//        System.out.println("9- toys");
+//
+//        int number = input.nextInt();
+//
+//        //*******************************************************************************************88
+//
+//        //view beauty and health
+//
+//        if(number == 1)
+//        {
+//
+//
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- cream");
+//            System.out.println("2- mask");
+//            System.out.println("3-shampoo");
+//            System.out.println("4- tooth brush");
+//            System.out.println("5- tooth paste");
+//            System.out.println("6- perfume"); // odkolon
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //********************************************************************************************8
+//
+//        //view book and stationery
+//
+//        else if(number == 2)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- pencil");
+//            System.out.println("2- pen");
+//            System.out.println("3- table");
+//            System.out.println("4- pencil case");
+//            System.out.println("5- notebook");
+//            System.out.println("6- eraser");
+//            System.out.println("7- ruler");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //********************************************************************************************88
+//
+//        //car and motorcycle
+//
+//        else if(number == 3)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- car");
+//            System.out.println("2- motorcycle");
+//            System.out.println("3- tire");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //************************************************************************************************8
+//
+//        //clothes
+//
+//        else if(number == 4)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- shirt");
+//            System.out.println("2- pants");
+//            System.out.println("3- hoodie");
+//            System.out.println("4- shoe");
+//            System.out.println("5- jacket");
+//            System.out.println("6- belt");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //**************************************************************************************************8
+//
+//        //view digital
+//
+//        else if(number == 5)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- mobile");
+//            System.out.println("2- tv");
+//            System.out.println("3- headphone");
+//            System.out.println("4- memory");
+//            System.out.println("5- camera");
+//            System.out.println("6- computer");
+//            System.out.println("7- playstation");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//        }
+//
+//        //****************************************************************************************************8
+//
+//        //view home and kitchen
+//
+//        else if(number == 6)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- refrigerator");
+//            System.out.println("2- carpet");
+//            System.out.println("3- sofa");
+//            System.out.println("4- washingMachine");
+//            System.out.println("5- gas");
+//            System.out.println("6- cooler");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//        }
+//
+//        //***************************************************************************************************
+//
+//        //view sport
+//
+//        else if(number == 7)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- ball");
+//            System.out.println("2- racket");
+//            System.out.println("3- skate");
+//            System.out.println("4- Whistle");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //**************************************************************************************************
+//
+//        //tools
+//
+//        else if(number == 8)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- wrench");
+//            System.out.println("2- screwDriver");
+//            System.out.println("3- screw");
+//            System.out.println("4- nut");
+//            System.out.println("5- saw");
+//            System.out.println("6- nails");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//        }
+//
+//        //*************************************************************************************************8
+//
+//        //toys
+//
+//        else if(number == 9)
+//        {
+//            System.out.println("please specify which product you want to view");
+//            System.out.println("1- puzzle");
+//            System.out.println("2- doll");
+//            System.out.println("3- gun");
+//            System.out.println("4- bike");
+//            System.out.println("5- car");
+//
+//            int number1 = input.nextInt();
+//
+//            if(number1 == 1)
+//            {
+//
+//            }
+//
+//            else if(number1 == 2)
+//            {
+//
+//            }
+//
+//            else if(number1 == 3)
+//            {
+//
+//            }
+//
+//            else if(number1 == 4)
+//            {
+//
+//            }
+//
+//            else if(number1 == 5)
+//            {
+//
+//            }
+//
+//            else if(number1 == 6)
+//            {
+//
+//            }
+//
+//            else
+//            {
+//                System.out.println("please enter valid input and try again");
+//                viewProduct();
+//            }
+//
+//        }
+//
+//        //***************************************************************************************************
+//
+//        else
+//        {
+//            System.out.println("please enter valid input and try again");
+//            viewProduct();
+//        }
+//
+//
+//
+//
+//    }
+
+    //=========================================================================================================
+
+    public static void searchProduct()
+    {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("please enter the type of product you want too search");
+        System.out.println("this search is done by name. if you want to search for other things in general choose option 10");
+        System.out.println("1- Beauty and health");
+        System.out.println("2- book and stationery");
+        System.out.println("3- car and motorcycle");
+        System.out.println("4- clothes");
+        System.out.println("5- digital");
+        System.out.println("6- home and kitchen");
+        System.out.println("7- sport");
+        System.out.println("8- tools");
+        System.out.println("9- toys");
+        System.out.println("10 another search");
+        System.out.println("11- logout");
+
+        int number = input.nextInt();
+
+        //*******************************************************************************************88
+
+        //search beauty and health
+
+        if(number == 1)
+        {
+
+
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- cream");
+            System.out.println("2- mask");
+            System.out.println("3-shampoo");
+            System.out.println("4- tooth brush");
+            System.out.println("5- tooth paste");
+            System.out.println("6- perfume"); // odkolon
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCream(name);
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+
+            }
+
+            else if(number1 == 2)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchMask(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchShampoo(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchToothbrush(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchToothpaste(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPerfume(name);
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //********************************************************************************************8
+
+        //search book and stationery
+
+        else if(number == 2)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- pencil");
+            System.out.println("2- pen");
+            System.out.println("3- table");
+            System.out.println("4- pencil case");
+            System.out.println("5- notebook");
+            System.out.println("6- eraser");
+            System.out.println("7- ruler");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPencil(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPen(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchTable(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPencilCase(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchNotebook(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchEraser(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 7)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchRuler(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //********************************************************************************************88
+
+        //car and motorcycle
+
+        else if(number == 3)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- car");
+            System.out.println("2- motorcycle");
+            System.out.println("3- tire");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCar(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchMotorcycle(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchTire(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //************************************************************************************************8
+
+        //clothes
+
+        else if(number == 4)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- shirt");
+            System.out.println("2- pants");
+            System.out.println("3- hoodie");
+            System.out.println("4- shoe");
+            System.out.println("5- jacket");
+            System.out.println("6- belt");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchShirt(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPants(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchHoodie(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchShoe(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchJacket(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchBelt(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //**************************************************************************************************8
+
+        //search digital
+
+        else if(number == 5)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- mobile");
+            System.out.println("2- tv");
+            System.out.println("3- headphone");
+            System.out.println("4- memory");
+            System.out.println("5- camera");
+            System.out.println("6- computer");
+            System.out.println("7- playstation");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchMobile(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchTv(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchHeadphone(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchMemory(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCamera(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchComputer(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 7)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPlaystation(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+        }
+
+        //****************************************************************************************************8
+
+        //search home and kitchen
+
+        else if(number == 6)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- refrigerator");
+            System.out.println("2- carpet");
+            System.out.println("3- sofa");
+            System.out.println("4- washingMachine");
+            System.out.println("5- gas");
+            System.out.println("6- cooler");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchRefrigerator(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCarpet(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchSofa(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchWashingMachine(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchGas(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCooler(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+        }
+
+        //***************************************************************************************************
+
+        //search sport
+
+        else if(number == 7)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- ball");
+            System.out.println("2- racket");
+            System.out.println("3- skate");
+            System.out.println("4- Whistle");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchBall(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchRacket(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchSkate(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchWhistle(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //**************************************************************************************************
+
+        //tools
+
+        else if(number == 8)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- wrench");
+            System.out.println("2- screwDriver");
+            System.out.println("3- screw");
+            System.out.println("4- nut");
+            System.out.println("5- saw");
+            System.out.println("6- nails");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchWrench(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchScrewdriver(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchScrew(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchNut(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchSaw(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 6)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchNails(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+        }
+
+        //*************************************************************************************************8
+
+        //toys
+
+        else if(number == 9)
+        {
+            System.out.println("please specify which product you want to search");
+            System.out.println("1- puzzle");
+            System.out.println("2- doll");
+            System.out.println("3- gun");
+            System.out.println("4- bike");
+            System.out.println("5- car");
+
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchPuzzle(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 2)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchDoll(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 3)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchGun(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 4)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchBike(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+            else if(number1 == 5)
+            {
+
+                System.out.println("please enter name");
+                String name = input.next();
+                shop.searchCarForToys(name);
+
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    searchProduct();
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    searchProduct();
+                }
+            }
+
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+        }
+
+        //***************************************************************************************************
+
+        else if(number == 10)
+        {
+
+            System.out.println("what kind of search do you want?");
+            System.out.println("1- search by price");
+            System.out.println("2- search by color");
+            System.out.println("3- log out");
+
+            int number1 = input.nextInt();
+
+            //----------------------------------------------------------------------------
+
+            //search by price
+
+            if(number1 == 1)
+            {
+
+                System.out.println("please enter the type of product you want too search");
+                System.out.println("1- Beauty and health");
+                System.out.println("2- book and stationery");
+                System.out.println("3- car and motorcycle");
+                System.out.println("4- clothes");
+                System.out.println("5- digital");
+                System.out.println("6- home and kitchen");
+                System.out.println("7- sport");
+                System.out.println("8- tools");
+                System.out.println("9- toys");
+                System.out.println("10- logout");
+
+                int number2 = input.nextInt();
+
+                System.out.println("please enter the desired amount for search");
+
+                double price = input.nextDouble();
+
+                if(number2 == 1)
+                {
+                    shop.searchBeautyAndHealthByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 2)
+                {
+                    shop.searchBookAndStationeryByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 3)
+                {
+                    shop.searchCarAndMotorcycleByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 4)
+                {
+                    shop.searchClothesByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 5)
+                {
+                    shop.searchDigitalByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 6)
+                {
+                    shop.searchHomeAndKitcheByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 7)
+                {
+                    shop.searchSportByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 8)
+                {
+                    shop.searchToolsByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 9)
+                {
+                    shop.searchToysByPrice(price);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 10)
+                {
+                    logOut();
+                }
+
+                else
+                {
+                    System.out.println("please enter valid input and try again");
+                    searchProduct();
+                }
+
+
+            }
+
+            //----------------------------------------------------------------------------------
+
+            //search by color
+
+            else if(number1 == 2)
+            {
+                System.out.println("please enter the type of product you want too search");
+                System.out.println("1- Beauty and health");
+                System.out.println("2- book and stationery");
+                System.out.println("3- car and motorcycle");
+                System.out.println("4- clothes");
+                System.out.println("5- digital");
+                System.out.println("6- home and kitchen");
+                System.out.println("7- sport");
+                System.out.println("8- tools");
+                System.out.println("9- toys");
+                System.out.println("10- logout");
+
+                int number2 = input.nextInt();
+
+                System.out.println("please enter the desired color for search");
+
+                String color = input.next();
+
+                if(number2 == 1)
+                {
+                    shop.searchBeautyAndHealthByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 2)
+                {
+                    shop.searchBookAndStationeryByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 3)
+                {
+
+                    shop.searchCarAndMotorcycleByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 4)
+                {
+
+                    shop.searchClothesByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 5)
+                {
+
+                    shop.searchDigitalByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 6)
+                {
+
+                    shop.searchHomeAndKitchenByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 7)
+                {
+
+                    shop.searchSportByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 8)
+                {
+
+                    shop.searchToolsByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 9)
+                {
+
+                    shop.searchToysByColor(color);
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        searchProduct();
+                    }
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        searchProduct();
+                    }
+                }
+
+                else if(number2 == 10)
+                {
+                    logOut();
+                }
+
+                else
+                {
+                    System.out.println("please enter valid input and try again");
+                    searchProduct();
+                }
+
+
+
+
+
+
+
+
+            }
+
+            //--------------------------------------------------------------------------------------
+
+            else if(number1 == 3)
+            {
+                logOut();
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                searchProduct();
+            }
+
+
+        }
+
+        else if(number == 11)
+        {
+            logOut();
+        }
+
+        else
+        {
+            System.out.println("please enter valid input and try again");
+            searchProduct();
+        }
+
+
+
+    }
 
 
 
@@ -901,7 +4308,7 @@ public class Main {
         System.out.println("please select one of the options below");
         System.out.println("1- view profile");
         System.out.println("2- update profile");
-        System.out.println("3- view Products");
+        System.out.println("3- view Products  (this option is under development and will be added in the next updates of the program)");
         System.out.println("4- search Products");
         System.out.println("5- view the wallet");
         System.out.println("6- add Products");
@@ -1062,7 +4469,8 @@ public class Main {
 
         else if(number == 3)
         {
-            //todo
+            System.out.println("we once said that this option is under development, please be patient, it will be added in the not too distant future");
+            sellerMenu(companyName);
         }
 
         //-----------------------------------------------------------------------------
@@ -1071,7 +4479,7 @@ public class Main {
 
         else if(number == 4)
         {
-            //todo
+            searchProduct();
         }
 
         //------------------------------------------------------------------------------------
@@ -1947,6 +5355,8 @@ public class Main {
         //------------------------------------------------------------------------------------------------
 
         //add clothes
+
+
 
         else if(number == 4)
         {
@@ -3627,7 +7037,7 @@ public class Main {
         System.out.println("please select one of the options below");
         System.out.println("1- view profile");
         System.out.println("2- update profile");
-        System.out.println("3- view Products");
+        System.out.println("3- view Products   (this option is under development and will be added in the next updates of the program)");
         System.out.println("4- search Products");
         System.out.println("5- view the amount of money in the shop");
         System.out.println("6- view users profile");
@@ -3639,7 +7049,8 @@ public class Main {
         System.out.println("12- view the sales list of sellers");  // list foroosh
         System.out.println("13- add discount code");
         System.out.println("14- view discount code list");
-        System.out.println("15- log out");
+        System.out.println("15- view requests");
+        System.out.println("16- log out");
 
         int number = input.nextInt();
         //-----------------------------------------------------------
@@ -3798,7 +7209,8 @@ public class Main {
 
         else if(number == 3)
         {
-
+            System.out.println("we once said that this option is under development, please be patient, it will be added in the not too distant future");
+            adminMenu(username);
         }
 
         //------------------------------------------------------------------------------------
@@ -3808,7 +7220,7 @@ public class Main {
 
         else if(number == 4)
         {
-
+            searchProduct();
         }
 
         //---------------------------------------------------------------------------------------
@@ -3957,7 +7369,136 @@ public class Main {
 
         else if(number == 8)
         {
+            System.out.println("Do you want to choose an admin from existing users or add a new admin?");
+            System.out.println("1- choose from users");
+            System.out.println("2- new admin");
 
+            int number1 = input.nextInt();
+
+            if(number1 == 1)
+            {
+
+                System.out.println("warning! when you turn a user into an admin, all the information of that user, including his wallet, will be destroyed");
+                System.out.println("do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+                int number2 = input.nextInt();
+
+                if(number2 == 1)
+                {
+                    System.out.println("please enter the username of the desired user");
+                    String desiredUser = input.next();
+                    if(shop.doesUserExist(desiredUser))
+                    {
+                        String newAdminPassword = shop.getUserPassword(desiredUser);
+                        String newAdminEmail = shop.getUserEmail(desiredUser);
+                        shop.removeUser(desiredUser);
+                        Admin newAdmin = new Admin(desiredUser , newAdminPassword , newAdminEmail);
+                        shop.addAdmin(newAdmin);
+
+
+                        System.out.println("Do you want continue?");
+                        System.out.println("1- yes");
+                        System.out.println("2- no");
+
+                        int n = input.nextInt();
+
+                        if(n == 1)
+                        {
+                            adminMenu(username);
+                        }
+                        else if(n == 2)
+                        {
+                            System.out.println("good bye :)");
+                        }
+
+                        else
+                        {
+                            System.out.println("you made a wrong entry and we will show the first page again by default");
+                            adminMenu(username);
+                        }
+
+                    }
+
+                    else
+                    {
+                        System.out.println("there is no user with this username , please try again");
+                        adminMenu(username);
+                    }
+                }
+
+                else if(number2 == 2)
+                {
+                    System.out.println("ok, we will come back to admin page");
+                    adminMenu(username);
+                }
+
+                else
+                {
+                    System.out.println("you entered a wrong entry and we will return you to the admin page by default");
+                    adminMenu(username);
+                }
+
+
+
+            }
+
+            //------------------------------------------------------------------------------------------------------------------
+
+            else if(number1 == 2)
+            {
+                System.out.println("please enter username");
+                String newUsername = input.next();
+                if(shop.doesAdminExist(newUsername))
+                {
+                    System.out.println("this username as admin already exists. please enter another username");
+                    adminMenu(username);
+                }
+
+                else
+                {
+                    System.out.println("please enter password");
+                    String newPassword = input.next();
+
+                    System.out.println("please enter email address");
+                    String newEmailAddress = input.next();
+
+                    Admin newAdmin = new Admin(newUsername , newPassword , newEmailAddress);
+                    shop.addAdmin(newAdmin);
+
+
+                    System.out.println("Do you want continue?");
+                    System.out.println("1- yes");
+                    System.out.println("2- no");
+
+                    int n = input.nextInt();
+
+                    if(n == 1)
+                    {
+                        adminMenu(username);
+                    }
+
+                    else if(n == 2)
+                    {
+                        System.out.println("good bye :)");
+                    }
+
+                    else
+                    {
+                        System.out.println("you made a wrong entry and we will show the first page again by default");
+                        adminMenu(username);
+                    }
+
+                }
+
+
+            }
+
+            else
+            {
+                System.out.println("please enter valid input and try again");
+                adminMenu(username);
+            }
         }
 
         //------------------------------------------------------------------------------------------
@@ -4139,6 +7680,42 @@ public class Main {
 
         }
 
+        //--------------------------------------------------------------------------------------------------
+
+        //get request
+
+        else if(number == 15)
+        {
+            shop.getRequest();
+
+            System.out.println("Do you want continue?");
+            System.out.println("1- yes");
+            System.out.println("2- no");
+
+            int n = input.nextInt();
+
+            if(n == 1)
+            {
+                adminMenu(username);
+            }
+            else if(n == 2)
+            {
+                System.out.println("good bye :)");
+            }
+
+            else
+            {
+                System.out.println("you made a wrong entry and we will show the first page again by default");
+                adminMenu(username);
+            }
+
+
+
+
+            //todo
+            //todo
+
+        }
 
 
 
@@ -4146,7 +7723,7 @@ public class Main {
 
         //log out
 
-        else if(number == 15)
+        else if(number == 16)
         {
             logOut();
         }

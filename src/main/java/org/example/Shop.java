@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Shop {
 
@@ -30,6 +31,12 @@ public class Shop {
         ArrayList<Sport> sports = new ArrayList<>();
         ArrayList<Tools> tools = new ArrayList<>();
         ArrayList<Toys> toys = new ArrayList<>();
+
+        //-----------------------------------------------------------------
+
+        //request list
+
+        ArrayList<Request> requests = new ArrayList<>();
 
         //----------------------------------------------------------------
 
@@ -87,7 +94,7 @@ public class Shop {
 
         //-----------------------------------------------------------------------------
 
-        //just getter
+        //just getter account type
         public ArrayList<User> getUsers() {
                 return users;
         }
@@ -100,8 +107,20 @@ public class Shop {
                 return sellers;
         }
 
-        public ArrayList<BeautyAndHealth> getBeautyAndHealths() {
-                return beautyAndHealths;
+        //=======================================================================================
+
+        //getter products
+
+        public ArrayList<BeautyAndHealth> getCream()
+        {
+                ArrayList<BeautyAndHealth> creams = null;
+                for (BeautyAndHealth i : beautyAndHealths)
+                {
+                        creams = i.getCream();
+                }
+                
+                return creams;
+
         }
 
         public ArrayList<BooksAndStationery> getBooksAndStationeries() {
@@ -157,6 +176,13 @@ public class Shop {
         }
 
         //=========================================================================
+
+        public void addAdmin(Admin admin)
+        {
+                admins.add(admin);
+        }
+
+        //===============================================================================
 
         public boolean doesUserExist(String username)
         {
@@ -305,6 +331,21 @@ public class Shop {
                         if( i.getUsername().equals(username) )
                         {
                                 return i.getPassword();
+                        }
+
+                }
+                return null;
+        }
+
+//=========================================================================================================
+
+        public String getUserEmail(String username)
+        {
+                for (User i : users)
+                {
+                        if( i.getUsername().equals(username) )
+                        {
+                                return i.getEmailAddress();
                         }
 
                 }
@@ -494,18 +535,1583 @@ public class Shop {
                 return discountCodes;
         }
 
-        //=================================================================================================================
-        public static void addRequest()
-        {
-                //for user and seller
+        //============================================================================================================
 
+        //search product
+
+        public void searchCream(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+
+        public void searchMask(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+
+        public void searchShampoo(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+        public void searchToothbrush(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchToothpaste(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchPerfume(String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //------------------------------------------------------------------------------------------------------
+
+        public void searchPen(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+        public void searchPencil(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchTable(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchPencilCase(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchNotebook(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchEraser(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchRuler(String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //-----------------------------------------------------------------------------------------------------
+
+        public void searchCar(String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchMotorcycle(String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchTire(String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //----------------------------------------------------------------------------------------------------------
+
+
+
+        public void searchShirt(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+        public void searchPants(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchHoodie(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchShoe(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+        public void searchJacket(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchBelt(String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //------------------------------------------------------------------------------------------------------
+
+
+        public void searchTv(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchMobile(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchHeadphone(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchMemory(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchCamera(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchComputer(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchPlaystation(String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+
+        public void searchGas(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchRefrigerator(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchCarpet(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchSofa(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchWashingMachine(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchCooler(String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //-------------------------------------------------------------------------------------------------------
+
+        public void searchBall(String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchRacket(String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchSkate(String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchWhistle(String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //----------------------------------------------------------------------------------------------
+
+
+        public void searchNut(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchWrench(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchScrewdriver(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchScrew(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchSaw(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchNails(String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //--------------------------------------------------------------------------------------------------------
+
+
+        public void searchCarForToys(String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+
+        public void searchPuzzle(String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchDoll(String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchGun(String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        public void searchBike(String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                                 
+                        }
+                }
+        }
+
+        //===========================================================================================================
+        
+        //search by price
+
+        public void searchBeautyAndHealthByPrice(double price)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchBookAndStationeryByPrice(double price)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchCarAndMotorcycleByPrice(double price)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchClothesByPrice(double price)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchDigitalByPrice(double price)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchHomeAndKitcheByPrice(double price)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchSportByPrice(double price)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchToolsByPrice(double price)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+
+        public void searchToysByPrice(double price)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getPrice()==price)
+                        {
+                                System.out.println("color is : " + i.getColor());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+                                 
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+                                 
+                        }
+                }
+        }
+        
+        //================================================================================================================
+
+        public void searchBeautyAndHealthByColor(String color)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+
+        public void searchBookAndStationeryByColor(String color)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchCarAndMotorcycleByColor(String color)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchClothesByColor(String color)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchDigitalByColor(String color)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchHomeAndKitchenByColor(String color)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchSportByColor(String color)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchToolsByColor(String color)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+
+        public void searchToysByColor(String color)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getColor().equals(color))
+                        {
+                                System.out.println("price is : " + i.getPrice());
+                                System.out.println("name is : " + i.getName());
+                                System.out.println("number is :" + i.getNumber());
+                                System.out.println("weight is :" + i.getWeight());
+                                System.out.println("type product is :" + i.getTypeProduct());
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this price");
+
+                        }
+                }
+        }
+        
+        
+
+
+
+        //=================================================================================================================
+        public void addRequest(Request request1)
+        {
+                requests.add(request1);
         }
 
         //====================================================================================================
 
-        public static void getRequest()
+        public void getRequest()
         {
-                //for admin
+
+              for(Request i : requests)
+              {
+                      Scanner input = new Scanner(System.in);
+                      System.out.println(i.user);
+                      System.out.println(i.money);
+                      System.out.println("are you do you agree to add this money to the user?");
+                      System.out.println("1- yes");
+                      System.out.println("2- no");
+
+                      int number4 = input.nextInt();
+
+                      if(number4 == 1)
+                      {
+                              i.isConfirm = true;
+                              i.confirm1();
+                      }
+
+                      else if(number4 == 2)
+                      {
+                             i.isConfirm = false;
+                      }
+
+              }
+
 
 
         }
@@ -513,7 +2119,7 @@ public class Shop {
         //===================================================================================================
 
 
-        //mohtaviat array list ro address hashoono chap mikone
+
         @Override
         public String toString() {
                 return "Shop{" +
