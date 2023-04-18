@@ -36,7 +36,9 @@ public class Shop {
 
         //request list
 
-        ArrayList<Request> requests = new ArrayList<>();
+        ArrayList<Request> requestsForWallet = new ArrayList<>();
+
+        ArrayList<Order> requestForBuyProduct = new ArrayList<>();
 
         //----------------------------------------------------------------
 
@@ -2072,25 +2074,1573 @@ public class Shop {
                         }
                 }
         }
+
+        //================================================================================================================
+        //==================================================================================================================
+        //===================================================================================================================
+
+        //buy product
+
+
+
+        public void buyCream(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                      requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+
+        public void buyMask(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+
+
+        public void buyShampoo(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+
+        public void buyToothBrush(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+
+        public void buyToothpaste(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+
+        public void buyPerfume(User user , String name)
+        {
+                for(BeautyAndHealth i : beautyAndHealths)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        //------------------------------------------------------------------------------------------------------
+
+        public void buyPen(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+
+        public void buyPencil(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+        public void buyTable(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+        public void buyPencilCase(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+                }
+        }
+
+        public void buyNotebook(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyEraser(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyRuler(User user , String name)
+        {
+                for(BooksAndStationery i : booksAndStationeries)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+        //-----------------------------------------------------------------------------------------------------
+
+        public void buyCar(User user , String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+        public void buyMotorcycle(User user  ,String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyTire(User user , String name)
+        {
+                for(CarAndMotorcycle i : carAndMotorcycles)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        //----------------------------------------------------------------------------------------------------------
+
+
+
+        public void buyShirt(User user , String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyPants(User user , String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyHoodie(User user , String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyShoe(User user ,String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyJacket(User user , String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyBelt(User user , String name)
+        {
+                for(Clothes i : clothes)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        //------------------------------------------------------------------------------------------------------
+
+
+        public void buyTv(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyMobile(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+        public void buyHeadphone(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyMemory(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyCamera(User user ,String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyComputer(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyPlaystation(User user , String name)
+        {
+                for(Digital i : digitals)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+
+        public void buyGas(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyRefrigerator(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyCarpet(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buySofa(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyWashingMachine(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyCooler(User user , String name)
+        {
+                for(HomeAndKitchen i : homeAndKitchens)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        //-------------------------------------------------------------------------------------------------------
+
+        public void buyBall(User user , String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyRacket(User user , String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buySkate(User user , String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+        public void buyWhistle(User user , String name)
+        {
+                for(Sport i : sports)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        //----------------------------------------------------------------------------------------------
+
+
+        public void buyNut(User user , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyWrench(User user , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyScrewdriver(User user  , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyScrew(User user , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buySaw(User user , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyNails(User user , String name)
+        {
+                for(Tools i : tools)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        //--------------------------------------------------------------------------------------------------------
+
+
+        public void buyCarForToys(User user , String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+
+        public void buyPuzzle(User user , String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyDoll(User user , String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+
+        public void buyGun(User user , String name)
+        {
+                for(Toys i : toys)
+                {
+
+
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
+        public void buyBike(User user , String name)
+        {
+                for(Toys i : toys)
+                {
+                        if(i.getName().equals(name))
+                        {
+
+
+                                if(i.getPrice()<= user.getWallet())
+                                {
+                                        Order order = new Order(user ,i.getName() , i.getTypeProduct() , i.getPrice());
+                                        requestForBuyProduct.add(order);
+                                }
+
+                                else
+                                {
+                                        System.out.println("your inventory is lower than the price of this product");
+                                }
+
+
+                        }
+
+                        else
+                        {
+                                System.out.println("there is no product with this name");
+                        }
+
+                }
+        }
         
         
 
 
 
         //=================================================================================================================
-        public void addRequest(Request request1)
+        public void addRequestForIncreaseWallet(Request request1)
         {
-                requests.add(request1);
+                requestsForWallet.add(request1);
         }
+
 
         //====================================================================================================
 
-        public void getRequest()
+        public void getRequestForIncreaseMoney()
         {
 
-              for(Request i : requests)
+                Scanner input = new Scanner(System.in);
+              for(Request i : requestsForWallet)
               {
-                      Scanner input = new Scanner(System.in);
+
                       System.out.println(i.user);
                       System.out.println(i.money);
                       System.out.println("are you do you agree to add this money to the user?");
@@ -2114,6 +3664,42 @@ public class Shop {
 
 
 
+        }
+
+
+        public void getRequestForBuyProduct()
+        {
+                Scanner input = new Scanner(System.in);
+                for(Order i : requestForBuyProduct)
+                {
+
+                        System.out.println("user : " + i.user);
+                        System.out.println("type product : " + i.typeProduct);
+                        System.out.println("name :" + i.name);
+                        System.out.println("price :" + i.price);
+
+                        System.out.println("are you do agree to this buy?");
+
+                        System.out.println("1- yes");
+                        System.out.println("2- no");
+
+                        int number4 = input.nextInt();
+
+                        if(number4 == 1)
+                        {
+                                i.isConfirm = true;
+                                i.confirm1();
+                        }
+
+                        else if(number4 == 2)
+                        {
+                                i.isConfirm = false;
+
+                        }
+
+
+
+                }
         }
 
         //===================================================================================================

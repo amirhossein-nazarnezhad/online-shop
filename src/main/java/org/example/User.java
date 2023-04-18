@@ -4,18 +4,21 @@ import java.util.ArrayList;
 
 public class User {
 
-        //create sefaresh class ***
+
 
 
         //================================================================
 
-        //array lists
+//        order
 
 
         ArrayList <Order> orders = new ArrayList<>();
 
 
-
+        public void addOrder(Order order1)
+        {
+                orders.add(order1);
+        }
 
 
 
@@ -92,6 +95,20 @@ public class User {
         public void setWallet(double wallet) {
                 this.wallet = wallet;
         }
+
+        //-----------------------------------------------------------------------------------
+        public void showOrders()
+        {
+                for (Order i : orders)
+                {
+                        System.out.println("name is :" + i.getName());
+                        System.out.println("type product is : " + i.getTypeProduct());
+                        System.out.println("price is :" + i.getPrice());
+                }
+
+
+        }
+
 
         //==================================================================================
 

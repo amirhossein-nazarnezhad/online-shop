@@ -23,8 +23,6 @@ public class Main {
 
 
 
-    //choon darm object haei ke az class ham ro mirizam toye array list  baad khode object ha ham tooshoon array list hast moqe chap error mide
-
 
     static Shop shop = new Shop(); // -> Digikala
 
@@ -629,7 +627,8 @@ public class Main {
         System.out.println("4- search Products");
         System.out.println("5- increase the wallet");
         System.out.println("6- buy product");
-        System.out.println("7- log out");
+        System.out.println("7- view orders");
+        System.out.println("8- log out");
 
 
 
@@ -873,11 +872,9 @@ public class Main {
             double money = input.nextDouble();
 
             Request request = new Request(shop.whichUser(username) , money);
-            shop.addRequest(request);
+            shop.addRequestForIncreaseWallet(request);
             System.out.println("please wait until accept by admin");
 
-//todo
-            //todo
 
 
             System.out.println("Do you want continue?");
@@ -910,15 +907,47 @@ public class Main {
 
         else if(number == 6)
         {
-            buyProduct();
+            buyProduct(user);
         }
 
 
         //------------------------------------------------------------------------------------------------------------
 
+        // view orders
+
+        else if(number == 7)
+        {
+            user.showOrders();
+
+
+            System.out.println("Do you want continue?");
+            System.out.println("1- yes");
+            System.out.println("2- no");
+
+            int n = input.nextInt();
+
+            if(n == 1)
+            {
+                userMenu(username);
+            }
+            else if(n == 2)
+            {
+                System.out.println("good bye :)");
+            }
+
+            else
+            {
+                System.out.println("you made a wrong entry and we will show the first page again by default");
+                userMenu(username);
+            }
+
+        }
+
+        //---------------------------------------------------------------------------------------------------------
+
         //log out
 
-        else if( number == 7)
+        else if( number == 8)
         {
             logOut();
         }
@@ -936,8 +965,10 @@ public class Main {
 
     //===================================================================================================
 
-    public static void buyProduct()
+    public static void buyProduct(User user)
     {
+
+
 
 
         Scanner input = new Scanner(System.in);
@@ -970,43 +1001,213 @@ public class Main {
             System.out.println("4- tooth brush");
             System.out.println("5- tooth paste");
             System.out.println("6- perfume"); // odkolon
+            System.out.println("7- logout");
 
             int number1 = input.nextInt();
 
             if(number1 == 1)
             {
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCream(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+
+
 
             }
 
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyMask(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
             else if(number1 == 3)
             {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyShampoo(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
 
             }
 
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyToothBrush(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
             else if(number1 == 5)
             {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyToothpaste(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
 
             }
 
             else if(number1 == 6)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPerfume(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+            }
+
+            else if(number1 == 7)
+            {
+                logIn();
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1025,43 +1226,250 @@ public class Main {
             System.out.println("5- notebook");
             System.out.println("6- eraser");
             System.out.println("7- ruler");
+            System.out.println("8- logout");
 
             int number1 = input.nextInt();
 
+            //pencil
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPencil(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //pen
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPen(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //table
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyTable(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //pencilcase
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPencilCase(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //notebook
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyNotebook(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //eraser
             else if(number1 == 6)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyEraser(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+            }
+
+            //ruler
+            else if(number1 == 7)
+            {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyRuler(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+            }
+
+            else if(number1 == 8)
+            {
+                logOut();
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1076,43 +1484,118 @@ public class Main {
             System.out.println("1- car");
             System.out.println("2- motorcycle");
             System.out.println("3- tire");
+            System.out.println("4- logout");
 
             int number1 = input.nextInt();
 
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCar(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
             else if(number1 == 2)
             {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyMotorcycle(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
 
             }
 
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyTire(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
             else if(number1 == 4)
             {
 
+                logOut();
             }
 
-            else if(number1 == 5)
-            {
 
-            }
-
-            else if(number1 == 6)
-            {
-
-            }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1130,43 +1613,212 @@ public class Main {
             System.out.println("4- shoe");
             System.out.println("5- jacket");
             System.out.println("6- belt");
+            System.out.println("7- logout");
 
             int number1 = input.nextInt();
 
+            //shirt
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyShirt(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //pants
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPants(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //hoodie
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyHoodie(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //shoe
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyShoe(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //jacket
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyJacket(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //belt
             else if(number1 == 6)
             {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyBelt(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
 
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1185,43 +1837,248 @@ public class Main {
             System.out.println("5- camera");
             System.out.println("6- computer");
             System.out.println("7- playstation");
+            System.out.println("8- log out");
 
             int number1 = input.nextInt();
 
+            //mobile
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyMobile(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+
             }
 
+            //tv
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyTv(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //headphone
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyHeadphone(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //memory
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyMemory(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //camera
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCamera(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //computer
             else if(number1 == 6)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyComputer(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+            }
+
+            //playstation
+            else if(number1 == 7)
+            {
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPlaystation(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+            }
+
+            else if(number1 == 8)
+            {
+                logOut();
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
         }
 
@@ -1238,43 +2095,217 @@ public class Main {
             System.out.println("4- washingMachine");
             System.out.println("5- gas");
             System.out.println("6- cooler");
+            System.out.println("7- logout");
 
             int number1 = input.nextInt();
 
+            //refrigerator
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyRefrigerator(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //carpet
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCarpet(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //sofa
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buySofa(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //washing machine
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyWashingMachine(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //gas
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyGas(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //cooler
             else if(number1 == 6)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCooler(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
+            }
+
+            else if(number1 == 7)
+            {
+                logOut();
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
         }
 
@@ -1289,43 +2320,152 @@ public class Main {
             System.out.println("2- racket");
             System.out.println("3- skate");
             System.out.println("4- Whistle");
+            System.out.println("5- log out");
 
             int number1 = input.nextInt();
 
+            //ball
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyBall(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //racket
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyRacket(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
             }
 
+            //skate
             else if(number1 == 3)
             {
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buySkate(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
+
 
             }
 
+            //whistle
             else if(number1 == 4)
             {
+
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyWhistle(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
 
             }
 
             else if(number1 == 5)
             {
-
+                logOut();
             }
 
-            else if(number1 == 6)
-            {
-
-            }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1343,43 +2483,210 @@ public class Main {
             System.out.println("4- nut");
             System.out.println("5- saw");
             System.out.println("6- nails");
+            System.out.println("7- logout");
 
             int number1 = input.nextInt();
 
+            //wrench
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyWrench(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //screwdriver
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyScrewdriver(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //screw
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyScrew(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //nut
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyNut(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //saw
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buySaw(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //nails
             else if(number1 == 6)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyNails(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            else if(number1 == 7)
+            {
+                logOut();
+            }
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
         }
 
@@ -1395,43 +2702,180 @@ public class Main {
             System.out.println("3- gun");
             System.out.println("4- bike");
             System.out.println("5- car");
+            System.out.println("6- log out");
 
             int number1 = input.nextInt();
 
+            //puzzle
             if(number1 == 1)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyPuzzle(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //doll
             else if(number1 == 2)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyDoll(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //gun
             else if(number1 == 3)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyGun(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //bike
             else if(number1 == 4)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyBike(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
+            //car
             else if(number1 == 5)
             {
 
+                System.out.println("please enter name");
+                String name1 = input.next();
+                System.out.println("your request has been successfully sent");
+
+                shop.buyCarForToys(user , name1);  //$$$##@@@
+
+                System.out.println("Do you want continue?");
+                System.out.println("1- yes");
+                System.out.println("2- no");
+
+                int n = input.nextInt();
+
+                if(n == 1)
+                {
+                    userMenu(user.getUsername());
+                }
+                else if(n == 2)
+                {
+                    System.out.println("good bye :)");
+                }
+
+                else
+                {
+                    System.out.println("you made a wrong entry and we will show the first page again by default");
+                    userMenu(user.getUsername());
+                }
             }
 
             else if(number1 == 6)
             {
 
+                logOut();
             }
 
             else
             {
                 System.out.println("please enter valid input and try again");
-                buyProduct();
+                buyProduct(user);
             }
 
         }
@@ -1441,7 +2885,7 @@ public class Main {
         else
         {
             System.out.println("please enter valid input and try again");
-            buyProduct();
+            buyProduct(user);
         }
 
 
@@ -3707,6 +5151,8 @@ public class Main {
             //----------------------------------------------------------------------------
 
             //search by price
+
+            // mishe filter ham gozash
 
             if(number1 == 1)
             {
@@ -7049,8 +8495,9 @@ public class Main {
         System.out.println("12- view the sales list of sellers");  // list foroosh
         System.out.println("13- add discount code");
         System.out.println("14- view discount code list");
-        System.out.println("15- view requests");
-        System.out.println("16- log out");
+        System.out.println("15- view requestsForWallet");
+        System.out.println("16- view requestsForBuyProduct");
+        System.out.println("17- log out");
 
         int number = input.nextInt();
         //-----------------------------------------------------------
@@ -7602,6 +9049,36 @@ public class Main {
         else if(number == 11)
         {
 
+            System.out.println("please enter the username of the desired user");
+
+            String username12 = input.next();
+
+            User user = shop.whichUser(username12);
+            user.showOrders();
+
+
+            System.out.println("Do you want continue?");
+            System.out.println("1- yes");
+            System.out.println("2- no");
+
+            int n = input.nextInt();
+
+            if(n == 1)
+            {
+                adminMenu(username);
+            }
+            else if(n == 2)
+            {
+                System.out.println("good bye :)");
+            }
+
+            else
+            {
+                System.out.println("you made a wrong entry and we will show the first page again by default");
+                adminMenu(username);
+            }
+
+
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -7610,7 +9087,8 @@ public class Main {
 
         else if(number == 12)
         {
-
+            System.out.println("please try the option in the future");
+            adminMenu(username);
         }
 
         //--------------------------------------------------------------------------------------------------
@@ -7686,7 +9164,7 @@ public class Main {
 
         else if(number == 15)
         {
-            shop.getRequest();
+            shop.getRequestForIncreaseMoney();
 
             System.out.println("Do you want continue?");
             System.out.println("1- yes");
@@ -7711,10 +9189,33 @@ public class Main {
 
 
 
+        }
 
-            //todo
-            //todo
 
+        else if(number == 16)
+        {
+            shop.getRequestForBuyProduct();
+
+            System.out.println("Do you want continue?");
+            System.out.println("1- yes");
+            System.out.println("2- no");
+
+            int n = input.nextInt();
+
+            if(n == 1)
+            {
+                adminMenu(username);
+            }
+            else if(n == 2)
+            {
+                System.out.println("good bye :)");
+            }
+
+            else
+            {
+                System.out.println("you made a wrong entry and we will show the first page again by default");
+                adminMenu(username);
+            }
         }
 
 
@@ -7723,7 +9224,7 @@ public class Main {
 
         //log out
 
-        else if(number == 16)
+        else if(number == 17)
         {
             logOut();
         }
